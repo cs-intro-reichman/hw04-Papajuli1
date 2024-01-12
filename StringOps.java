@@ -22,12 +22,12 @@ public class StringOps {
     ////// ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        // System.out.println(capVowelsLowRest("Hello World"));
-        // System.out.println(capVowelsLowRest("One two tHRee world"));
-        // System.out.println(capVowelsLowRest("vowels are fun"));
-        // System.out.println(capVowelsLowRest("intro"));
-        // System.out.println(capVowelsLowRest("yellow"));
-        // System.out.println();
+        System.out.println(capVowelsLowRest("Hello World"));
+        System.out.println(capVowelsLowRest("One two tHRee world"));
+        System.out.println(capVowelsLowRest("vowels are fun"));
+        System.out.println(capVowelsLowRest("intro"));
+        System.out.println(capVowelsLowRest("yellow"));
+        System.out.println();
         // System.out.println(firstToLower("YEllow"));
         // System.out.println(firstToUpper("HELLO world"));
         // System.out.println();
@@ -47,10 +47,14 @@ public class StringOps {
     public static String capVowelsLowRest(String string) {
         String str = "";
         String vowels = "aeiou";
+        String Vowels = "AEIOU";
         for (int i = 0; i < string.length(); i++) {
-            if (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z')
-                str += (char) (string.charAt(i) + 32);
-            else if (vowels.indexOf(string.charAt(i)) != -1)
+            if (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z') {
+                if (Vowels.indexOf(string.charAt(i)) != -1)
+                    str += string.charAt(i);
+                else
+                    str += (char) (string.charAt(i) + 32);
+            } else if (vowels.indexOf(string.charAt(i)) != -1)
                 str += (char) (string.charAt(i) - 32);
             else
                 str += string.charAt(i);
